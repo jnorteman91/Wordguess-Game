@@ -6,7 +6,7 @@
     <title>Word-Guess</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <script src="assets/javascript/game.js"></script>
+    
 </head>
 <body>
     <div class="jumbotron jumbotron-fluid">
@@ -19,10 +19,12 @@
 
     <div class="container">
         <p>Guesses left: <span id ="guessesLeft"></span></p>
-        <p>Wrong Guess: <span id ="wrongGuess"></span></p>
-        <p>Player Wins: <span id ="winCount"></span></p>
-        <p>Player Losses: <span id ="lossCount"></span></p>
+        <p>Wrong Guess: <span id ="wrongGuesses"></span></p>
+        <p>Player Wins: <span id ="winCounter"></span></p>
+        <p>Player Losses: <span id ="lossCounter"></span></p>
         <h2 id ="wordBlank"></h2>
+
+        <script src="assets/javascript/game.js"></script>
     </div>
 </body>
 </html>

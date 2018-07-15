@@ -34,3 +34,55 @@ function gameStart(){
     }
 }
 
+function letterChecker(letters){
+
+    var lettersInWord = false;
+
+    for(var  i = 0; i < numberBlanks; i++){
+        if(wordChoice[i] === letters){
+            lettersInWord = true;
+        }
+    }
+
+    if(lettersInWord){
+        for(var  i = 0; i < numberBlanks; i++){
+            if(wordChoice[i] === letters){
+                blanksSuccess[i] = letters;
+            }
+        }   
+        
+    } else {
+        numGuess --;
+        wrongGuess.push(letters)
+    }
+}
+
+function gameEnd(){
+
+    document.getElementById("wordBlank").innerHTML = blanksSuccess;
+    document.getElementById("guessesLeft").innerHTML = numGuess;
+    document.getElementById("wrongGuesses").innerHTML = wrongGuess;
+
+    if(lettersInWord.join("") === blanksSuccess.join("")){
+        winCount++;
+        alert("You've Won!!");
+        document.getElementById("winCount").innerHTML = winCounter;
+        gameStart();
+
+    } else if (numGuess){
+        document.getElementById("lossCounter").innerHTML = lossCount;
+        document.getElementById("wrongGuesses").innerHTML = "";
+        alert("Out of Guesses! Try again!");
+        gameStart();
+    }
+}
+
+gameStart();
+
+    document.onkeyup = function(event){
+
+        var guessedLetter = String.fromCharCode(event.keyCode).toLowerCase
+        letterChecker(guessedLetter)
+        gameEnd();
+    }
+
