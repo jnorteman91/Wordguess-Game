@@ -6,7 +6,6 @@
     <title>Word-Guess</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
     <script src="assets/javascript/game.js"></script>
 </head>
 <body>
@@ -14,14 +13,16 @@
         <div class="container">
           <h1 class="display-4">Word-Guess</h1>
           <p class="lead">Guess letters to win the game</p>
+          <p  class="lead">The words you're looking for are colors!</p>
         </div>
       </div>
 
     <div class="container">
-        <p>Guesses left: <span class ="guesses"></span></p>
-        <p>Wrong Guess: <span class ="wrong-guess"></span></p>
-        <p>Player Wins: <span class ="winCounter"></span></p>
-        <p>Player Losses: <span class ="lossCounter"></span></p>
+        <p>Guesses left: <span id ="guessesLeft"></span></p>
+        <p>Wrong Guess: <span id ="wrongGuess"></span></p>
+        <p>Player Wins: <span id ="winCount"></span></p>
+        <p>Player Losses: <span id ="lossCount"></span></p>
+        <h2 id ="wordBlank"></h2>
     </div>
 </body>
 </html>
