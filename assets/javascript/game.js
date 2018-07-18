@@ -40,20 +40,20 @@ window.onload = function(){
         document.getElementById('guessesLeft').innerHTML = numGuess;
     }
 
-    function letterchecker(lettersWord){
+    function letterchecker(letterGuess){
 
         var lettersWord = false;
 
         for(var i = 0; i < numberBlanks; i++){
-            if(wordChoice[i] === lettersWord){
+            if(wordChoice[i] === letterGuess){
                 lettersWord = true;
             }
         }
 
         if(lettersWord){
             for(i = 0; i < numberBlanks; i++){
-                if(wordChoice[i] === lettersWord){
-                    blanksSuccess[i] = lettersWord;
+                if(wordChoice[i] === letterGuess){
+                    blanksSuccess[i] = letterGuess;
                 }
             }
             
