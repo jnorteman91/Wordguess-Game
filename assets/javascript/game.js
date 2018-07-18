@@ -1,12 +1,7 @@
 window.onload = function(){
 
-    var wordList = [
-        "black",
-        "White",
-        "Orange",
-        "Green",
-        "blue"
-    ]
+    var wordList = ["black", "White", "Orange", "Green", "blue"]
+    
     console.log(wordList);
     var wordChoice = "";
     var lettersWord = [];
@@ -43,7 +38,7 @@ window.onload = function(){
     function letterchecker(letterGuess){
 
         var lettersWord = false;
-
+// somthing is wrong around this area not sure what, as it will not display the first letter of the word and displays false under the condition of a worng letter.
         for(var i = 0; i < numberBlanks; i++){
             if(wordChoice[i] === letterGuess){
                 lettersWord = true;
