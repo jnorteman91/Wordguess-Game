@@ -14,8 +14,8 @@ window.onload = function(){
     var blanksSuccess = [];
     var wrongGuess = [];
 
-    var winCounter = 0;
-    var lossCounter = 0;
+    var winCount = 0;
+    var lossCount = 0;
     var numGuess = 15
 
     function gameStart(){
@@ -70,6 +70,28 @@ window.onload = function(){
         document.getElementById('guessesLeft').innerHTML = numGuess;
         document.getElementById('wrongGuesses').innerHTML = wrongGuess.join(" ");
 
+        if(lettersWord.join(" ") === blanksSuccess.join(" ")){
+            winCounter++;
+            alert("You've won the game!!")
+            document.getElementById('winCounter').innerHTML = winCount;
+            gameStart();
+        
+        }else if(numGuess === 0){
+            
+            document.getElementById('lossCounter').innerHTML = lossCount++;
+            document.getElementById('wrongGuesses').innerHTML = "";
+            alert("You are out of guesses. Try again!");
+            gameStart();
+
+        }
+    }
+
+    gameStart();
+    this.document.onkeyup = function(event){
+
+        var letterGuess = String.fromCharCode(event.keyCode).toLowerCase();
+        letterchecker(letterGuess);
+        endGame();
         
     }
 }
