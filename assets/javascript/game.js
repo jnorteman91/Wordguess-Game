@@ -40,5 +40,36 @@ window.onload = function(){
         document.getElementById('guessesLeft').innerHTML = numGuess;
     }
 
-    
+    function letterchecker(lettersWord){
+
+        var lettersWord = false;
+
+        for(var i = 0; i < numberBlanks; i++){
+            if(wordChoice[i] === lettersWord){
+                lettersWord = true;
+            }
+        }
+
+        if(lettersWord){
+            for(i = 0; i < numberBlanks; i++){
+                if(wordChoice[i] === lettersWord){
+                    blanksSuccess[i] = lettersWord;
+                }
+            }
+            
+        }else{
+            numGuess --;
+            wrongGuess.push(lettersWord)   
+          
+        }
+    }
+
+    function endGame(){
+
+        document.getElementById('wordBlanks').innerHTML = blanksSuccess.join(" ");
+        document.getElementById('guessesLeft').innerHTML = numGuess;
+        document.getElementById('wrongGuesses').innerHTML = wrongGuess.join(" ");
+
+        
+    }
 }
