@@ -38,7 +38,7 @@ window.onload = function(){
     function letterchecker(letterGuess){
 
         var lettersWord = false;
-// somthing is wrong around this area not sure what, as it will not display the first letter of the word and displays false under the condition of a worng letter.
+// somthing is wrong around this area not sure what, as it will not display the first letter of the word unless the word is blue and displays false under the condition of a worng letter.
         for(var i = 0; i < numberBlanks; i++){
             if(wordChoice[i] === letterGuess){
                 lettersWord = true;
@@ -65,8 +65,9 @@ window.onload = function(){
         document.getElementById('guessesLeft').innerHTML = numGuess;
         document.getElementById('wrongGuesses').innerHTML = wrongGuess.join(" ");
 
-        if(lettersWord.join(" ") === blanksSuccess.join(" ")){
-            winCounter++;
+        if
+            (lettersWord.join(" ") === blanksSuccess.join(" ")){
+            winCount++;
             alert("You've won the game!!")
             document.getElementById('winCounter').innerHTML = winCount;
             gameStart();
