@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    var wordList = ["black", "white", "orange", "green", "blue"]
+    var wordList = ["black", "white", "orange", "green", "blue", "purple", "red"]
     
     console.log(wordList);
     var wordChoice = "";
