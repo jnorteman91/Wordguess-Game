@@ -1,6 +1,6 @@
 window.onload = function(){
 
-    var wordList = ["black", "White", "Orange", "Green", "blue"]
+    var wordList = ["black", "white", "orange", "green", "blue"]
     
     console.log(wordList);
     var wordChoice = "";
@@ -31,21 +31,23 @@ window.onload = function(){
         }
         console.log(blanksSuccess);
 
+        
+
         document.getElementById('wordBlanks').innerHTML = blanksSuccess.join("");
         document.getElementById('guessesLeft').innerHTML = numGuess;
     }
 
-    function letterchecker(letterGuess){
+    function checkLetters(letterGuess){
 
-        var lettersWord = false;
-// somthing is wrong around this area not sure what, as it will not display the first letter of the word unless the word is blue and displays false under the condition of a worng letter.
+        var letterWord = false;
+// somthing is wrong around this area not sure what, as it will not display the first letter of the word unless the word is blue or black and displays false under the condition of a wrong letter.
         for(var i = 0; i < numberBlanks; i++){
             if(wordChoice[i] === letterGuess){
-                lettersWord = true;
+                letterWord = true;
             }
         }
 
-        if(lettersWord){
+        if(letterWord){
             for(i = 0; i < numberBlanks; i++){
                 if(wordChoice[i] === letterGuess){
                     blanksSuccess[i] = letterGuess;
@@ -54,7 +56,7 @@ window.onload = function(){
             
         }else{
             numGuess --;
-            wrongGuess.push(lettersWord)   
+            wrongGuess.push(letterGuess)   
           
         }
     }
@@ -86,7 +88,7 @@ window.onload = function(){
     this.document.onkeyup = function(event){
 
         var letterGuess = String.fromCharCode(event.keyCode).toLowerCase();
-        letterchecker(letterGuess);
+        checkLetters(letterGuess);
         endGame();
         
     }
